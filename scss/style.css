@@ -1949,6 +1949,12 @@ header #navbar {
   -webkit-animation-name: slideInUp;
           animation-name: slideInUp;
 }
+.register-login
+{
+  position: absolute;
+    top: 20px;
+    right: 30px;
+}
 .main_header_area .register-login a {
   font-size: 15px;
   text-transform: uppercase;
@@ -7011,4 +7017,7 @@ ul.sidebar-tags li a:hover {
   .booking-terms a {
     width: auto !important;
   }
+  /* Default style (when at top of page) */
+
+
 }/*# sourceMappingURL=style.css.map */
