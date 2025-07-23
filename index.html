@@ -32,17 +32,7 @@
   <!-- header starts -->
   <header class="main_header_area">
     <div class="header-content py-1 bg-theme">
-      <div class="container d-flex align-items-center justify-content-between">
-        <div class="links">
-          <ul>
-            <li>
-              <a href="#" class="white"><i class="icon-location-pin white"></i> Hollywood, America</a>
-            </li>
-            <li>
-              <a href="#" class="white"><i class="icon-clock white"></i> Mon-Fri: 10 AM â€“ 5 PM</a>
-            </li>
-          </ul>
-        </div>
+      <div class="container d-flex align-items-center justify-content-end">
         <div class="links float-right">
           <ul>
             <li>
@@ -92,7 +82,7 @@
             </div>
             <!-- /.navbar-collapse -->
             <div class="register-login d-flex align-items-center ms-3">
-              <a href="#" class="nir-btn white" data-bs-toggle="modal" data-bs-target="#exampleModal" class="me-3"><i class="icon-user"></i> Free Register</a>
+              <a href="#" class="nir-btn white" data-bs-toggle="modal" data-bs-target="#exampleModal" class="me-3"><i class="icon-user"></i> Pre Register</a>
             </div>
 
             <div id="slicknav-mobile"></div>
@@ -112,15 +102,13 @@
         <div class="row align-items-center">
           <div class="col-lg-6 mb-4">
             <div class="banner-content text-lg-start text-center">
-              <h4 class="theme mb-0">Explore The World</h4>
-              <h1>Start Planning Your Dream Trip Today!</h1>
-              <p class="mb-4">At Traveling, we believe every journey has the power to transform. Whether you're drawn to
-                exotic beaches, ancient cities, majestic mountains, or thriving cultural hubs, weâ€™re here to bring your
-                travel aspirations to life. Our expert team will guide you at every step â€” from selecting the perfect
-                destination and crafting a seamless itinerary to securing the best accommodations, excursions, and
-                more.</br></br>
-                <b>Start planning with Traveling today</b>, and embark on an unforgettable journey that will forever
-                shape the way you see the world. Adventure, comfort, and discovery await!
+              <h4 class="theme mb-0">Plan Smarter. Travel Easier.</h4>
+              <h1>Start Planning Your Trip with TripSyncGo!</h1>
+              <p class="mb-4"> At <strong>TripSyncGo</strong>, we believe that travel should be exciting—not stressful. Whether you're exploring vibrant cities, scenic landscapes, or cultural hotspots, we help you organize every part of your journey in advance.
+               </br></br>
+               From airport transfers and local guides to hotel stays and must-see spots—<strong>TripSyncGo lets you book everything before you land</strong>. Say goodbye to scams, hidden fees, and travel uncertainty.
+               </br></br>
+               <b>Start planning today</b> and travel with confidence, comfort, and smart savings.
               </p>
 
             </div>
@@ -196,86 +184,70 @@
   </section>
 
   <!-- about-us starts -->
-  <section class="about-us pb-6 pt-6" 
-            param($match)
-            $beforeMatch = $content.Substring(0, $match.Index)
-            $elementStart = $beforeMatch.LastIndexOf('<')
-            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
-            
-            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
-                # Element already has class attribute, merge
-                $existingClasses = $matches[1]
-                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
-                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
-            } else {
-                # Element doesn't have class attribute, add new one
-                return $newValue
-            }
-        >
-    <div class="container">
-      <div class="section-title mb-6 w-50 mx-auto text-center">
-        <h4 class="mb-1 theme1">4 Step of The Perfect Tour</h4>
-        <h2 class="mb-1">Find <span class="theme">Travel Perfection</span></h2>
-        <p>you'll create, experience, and reflect on the perfect tour that fulfills every travel aspiration.</p>
-      </div>
+  <section class="about-us pb-6 pt-6">
+  <div class="container">
+    <div class="section-title mb-6 w-50 mx-auto text-center">
+      <h4 class="mb-1 theme1">4 Steps to Smart Travel</h4>
+      <h2 class="mb-1">Plan with <span class="theme">Confidence & Ease</span></h2>
+      <p>With TripSyncGo, you'll plan, personalize, and enjoy every moment of your journey — stress-free and ahead of time.</p>
+    </div>
 
-      <!-- why us starts -->
-      <div class="why-us">
-        <div class="why-us-box">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-              <div class="why-us-item text-center p-4 py-5 border rounded bg-white">
-                <div class="why-us-content">
-                  <div class="why-us-icon">
-                    <i class="icon-flag theme"></i>
-                  </div>
-                  <h4><a href="about.html">Tell Us What You want To Do</a></h4>
-                  <p class="mb-0">Tell us what you want to experience next from thrilling adventures and serene escapes
-                    to local discoveries.</p>
+    <!-- why us starts -->
+    <div class="why-us">
+      <div class="why-us-box">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+            <div class="why-us-item text-center p-4 py-5 border rounded bg-white">
+              <div class="why-us-content">
+                <div class="why-us-icon">
+                  <i class="icon-flag theme"></i>
                 </div>
+                <h4><a href="about.html">Tell Us What You Want</a></h4>
+                <p class="mb-0">Let us know the kind of trip you’re dreaming of—adventures, cultural journeys, relaxing getaways, or something unique.</p>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-              <div class="why-us-item text-center p-4 py-5 border rounded bg-white">
-                <div class="why-us-content">
-                  <div class="why-us-icon">
-                    <i class="icon-location-pin theme"></i>
-                  </div>
-                  <h4><a href="about.html">Share Your Travel Locations</a></h4>
-                  <p class="mb-0">Share your favorite travel spots â€” hidden gems, local favorites, or dream vacations youâ€™ve always wanted to visit!</p>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+            <div class="why-us-item text-center p-4 py-5 border rounded bg-white">
+              <div class="why-us-content">
+                <div class="why-us-icon">
+                  <i class="icon-location-pin theme"></i>
                 </div>
+                <h4><a href="about.html">Choose Your Destinations</a></h4>
+                <p class="mb-0">Select the cities, attractions, or local spots you want to visit. We’ll help you connect everything smoothly.</p>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-              <div class="why-us-item text-center p-4 py-5 border rounded bg-white">
-                <div class="why-us-content">
-                  <div class="why-us-icon">
-                    <i class="icon-directions theme"></i>
-                  </div>
-                  <h4><a href="about.html">Share Your Travel Preference</a></h4>
-                  <p class="mb-0">Tell us your travel preferences, from preferred destinations and accommodation types to activity styles and travel pace.</p>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+            <div class="why-us-item text-center p-4 py-5 border rounded bg-white">
+              <div class="why-us-content">
+                <div class="why-us-icon">
+                  <i class="icon-directions theme"></i>
                 </div>
+                <h4><a href="about.html">Set Your Travel Style</a></h4>
+                <p class="mb-0">Tell us your pace, comfort preferences, and interests—from budget-friendly to luxury, solo to group travel.</p>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-              <div class="why-us-item text-center p-4 py-5 border rounded bg-white">
-                <div class="why-us-content">
-                  <div class="why-us-icon">
-                    <i class="icon-compass theme"></i>
-                  </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+            <div class="why-us-item text-center p-4 py-5 border rounded bg-white">
+              <div class="why-us-content">
+                <div class="why-us-icon">
+                  <i class="icon-compass theme"></i>
                 </div>
-                <h4><a href="about.html">We are 100% Trusted Tour Agency</a></h4>
-                <p class="mb-0">As a 100% trusted tour agency, we combine expert guidance, transparent pricing, and personalized support.</p>
-
+                <h4><a href="about.html">Get Trusted Local Offers</a></h4>
+                <p class="mb-0">Receive bids from verified transport providers, guides, and hotels—so you book confidently, ahead of arrival.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- why us ends -->
     </div>
-    <div class="white-overlay"></div>
-  </section>
+    <!-- why us ends -->
+  </div>
+  <div class="white-overlay"></div>
+</section>
+
   <!-- about-us ends -->
 
   <!-- top Destination starts -->
@@ -284,8 +256,7 @@
       <div class="section-title mb-6 w-50 mx-auto text-center">
         <h4 class="mb-1 theme1">Top Destinations</h4>
         <h2 class="mb-1">Explore <span class="theme">Top Destinations</span></h2>
-        <p>Discover the worldâ€™s most sought-after destinationsâ€”like Hurghada, Sharmâ€¯Elâ€¯Sheikh, Tokyo, and Dubaiâ€”trending
-          this summer as travelers seek culture, sun, and adventure in 2025.</p>
+        <p>Discover the world’s most sought-after destinations—like Hurghada, Sharm El Sheikh, Tokyo, and Dubai—trending this season as travelers search for culture, sunshine, and unforgettable adventures in 2025.</p>
       </div>
       <div class="row align-items-center">
         <div class="col-lg-5 mb-4">
@@ -378,99 +349,82 @@
   <!-- top Destination ends -->
 
   <!-- about-us starts -->
-  <section class="about-us pt-0 pb-6" 
-            param($match)
-            $beforeMatch = $content.Substring(0, $match.Index)
-            $elementStart = $beforeMatch.LastIndexOf('<')
-            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
-            
-            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
-                # Element already has class attribute, merge
-                $existingClasses = $matches[1]
-                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
-                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
-            } else {
-                # Element doesn't have class attribute, add new one
-                return $newValue
-            }
-        >
-    <div class="container">
-      <div class="about-image-box">
-        <div class="row d-flex align-items-center justify-content-between">
-          <div class="col-lg-6 mb-4 pe-4">
-            <div class="about-image overflow-hidden">
-              <img src="images/travel1.png" alt="" />
+  <section class="about-us pt-0 pb-6">
+  <div class="container">
+    <div class="about-image-box">
+      <div class="row d-flex align-items-center justify-content-between">
+        <div class="col-lg-6 mb-4 pe-4">
+          <div class="about-image overflow-hidden">
+            <img src="images/travel1.png" alt="TripSyncGo travel planning" />
+          </div>
+        </div>
+        <div class="col-lg-6 mb-4 ps-4">
+          <div class="about-content text-center text-lg-start mb-4">
+            <h4 class="theme d-inline-block mb-0">Get to Know TripSyncGo</h4>
+            <h2 class="border-b mb-2 pb-1">Plan Every Step of Your Journey with Confidence</h2>
+            <p class="border-b mb-2 pb-2">
+              Discover seamless travel planning with TripSyncGo. From local city walks and hidden gems to trusted guides and flexible packages, we offer everything you need—before you even land. Book smart, travel safe, and explore the world with real connections and no surprises.
+            </p>
+            <div class="about-listing">
+              <ul class="d-flex justify-content-between">
+                <li><i class="icon-location-pin theme"></i>Local Guides</li>
+                <li><i class="icon-briefcase theme"></i>Transparent Pricing</li>
+                <li><i class="icon-folder theme"></i> Customizable Packages</li>
+              </ul>
             </div>
           </div>
-          <div class="col-lg-6 mb-4 ps-4">
-            <div class="about-content text-center text-lg-start mb-4">
-              <h4 class="theme d-inline-block mb-0">Get To Know Us</h4>
-              <h2 class="border-b mb-2 pb-1">Explore All Tour of the world with us.</h2>
-              <p class="border-b mb-2 pb-2">
-                Discover a world of curated adventures tailored to your dreams. Whether youâ€™re seeking local-guided city
-                walks, budget-friendly hidden gems, or all-inclusive tour packages with transparent pricing and expert
-                support. With our dedicated tour guides, friendly pricing, and reliable packages, every trip is easy to
-                book, joyfully experienced, and effortlessly unforgettable.
-              </p>
-              <div class="about-listing">
-                <ul class="d-flex justify-content-between">
-                  <li><i class="icon-location-pin theme"></i> Tour Guide</li>
-                  <li><i class="icon-briefcase theme"></i> Friendly Price</li>
-                  <li><i class="icon-folder theme"></i> Reliable Tour Package</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-12">
-            <!-- Counter -->
-            <div class="counter-main w-75 float-end">
-              <div class="counter p-4 pb-0 box-shadow bg-white rounded">
-                <div class="row">
-                  <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                    <div class="counter-item border-end pe-4">
-                      <div class="counter-content">
-                        <h2 class="value mb-0 theme">20</h2>
-                        <span class="m-0">Years Experiences</span>
-                      </div>
+        </div>
+        <div class="col-lg-12">
+          <!-- Counter -->
+          <div class="counter-main w-75 float-end">
+            <div class="counter p-4 pb-0 box-shadow bg-white rounded">
+              <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                  <div class="counter-item border-end pe-4">
+                    <div class="counter-content">
+                      <h2 class="value mb-0 theme">20</h2>
+                      <span class="m-0">Years of Experience</span>
                     </div>
                   </div>
+                </div>
 
-                  <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                    <div class="counter-item border-end pe-4">
-                      <div class="counter-content">
-                        <h2 class="value mb-0 theme">530</h2>
-                        <span class="m-0">Tour Packages</span>
-                      </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                  <div class="counter-item border-end pe-4">
+                    <div class="counter-content">
+                      <h2 class="value mb-0 theme">530</h2>
+                      <span class="m-0">Tailored Tour Packages</span>
                     </div>
                   </div>
+                </div>
 
-                  <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                    <div class="counter-item border-end pe-4">
-                      <div class="counter-content">
-                        <h2 class="value mb-0 theme">850</h2>
-                        <span class="m-0">Happy Customers</span>
-                      </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                  <div class="counter-item border-end pe-4">
+                    <div class="counter-content">
+                      <h2 class="value mb-0 theme">850</h2>
+                      <span class="m-0">Happy Travelers</span>
                     </div>
                   </div>
+                </div>
 
-                  <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
-                    <div class="counter-item">
-                      <div class="counter-content">
-                        <h2 class="value mb-0 theme">320</h2>
-                        <span class="m-0">Award Winning</span>
-                      </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                  <div class="counter-item">
+                    <div class="counter-content">
+                      <h2 class="value mb-0 theme">320</h2>
+                      <span class="m-0">Industry Awards</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- End Counter -->
           </div>
+          <!-- End Counter -->
         </div>
       </div>
     </div>
-    <div class="white-overlay"></div>
-  </section>
+  </div>
+  <div class="white-overlay"></div>
+</section>
+
   <!-- about-us ends -->
 
 
@@ -529,7 +483,7 @@
       <div class="section-title mb-6 w-75 mx-auto text-center">
         <h4 class="mb-1 theme1">Tour Guides</h4>
         <h2 class="mb-1">Meet Our <span class="theme">Excellent Guides</span></h2>
-        <p>Our passionate and knowledgeable guides are here to make your journey unforgettable. Get ready to explore hidden gems, rich culture, and breathtaking landscapes with the best in the business.</p>
+        <p>Handpicked for their experience and passion, our local guides bring your destination to life. Discover hidden gems, authentic culture, and unforgettable stories—all with guides you can trust and connect with before you even land.</p>
       </div>
       <div class="team-main">
         <div class="row shop-slider">
@@ -599,58 +553,60 @@
   <!-- our teams Ends -->
 
   <!-- testomonial start -->
-  <section class="testimonial pt-9" class="bg-testimonial">
-    <div class="container">
-      <div class="section-title mb-6 text-center w-75 mx-auto">
-        <h4 class="mb-1 theme1">Our Testimonails</h4>
-        <h2 class="mb-1">Good Reviews By <span class="theme">Clients</span></h2>
-        <p>Weâ€™re proud to share the wonderful experiences our travelers have had. Discover what makes us a top choice for unforgettable journeys around the world.</p>
-      </div>
-      <div class="row align-items-center">
-        <div class="col-lg-5 pe-4">
-          <div class="testimonial-image">
-            <img src="images/travel2.png" alt="" />
-          </div>
+  <section class="testimonial pt-9 bg-testimonial">
+  <div class="container">
+    <div class="section-title mb-6 text-center w-75 mx-auto">
+      <h4 class="mb-1 theme1">Our Testimonials</h4>
+      <h2 class="mb-1">Great Reviews From <span class="theme">Happy Travelers</span></h2>
+      <p>We’re proud to share real stories from real travelers. See how TripSyncGo made their journeys smoother, safer, and unforgettable.</p>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-lg-5 pe-4">
+        <div class="testimonial-image">
+          <img src="images/travel2.png" alt="Happy traveler" />
         </div>
-        <div class="col-lg-7 ps-4">
-          <div class="row review-slider">
-            <div class="col-sm-4 item">
-              <div class="testimonial-item1 rounded">
-                <div class="author-info d-flex align-items-center mb-4">
-                  <img src="images/testimonial/client1.png" alt="" />
-                  <div class="author-title ms-3">
-                    <h5 class="m-0 theme">Jared Erondu</h5>
-                    <span>Supervisor</span>
-                  </div>
-                </div>
-                <div class="details">
-                  <p class="m-0">
-                    <i class="fa fa-quote-left me-2 fs-1"></i>Traveling with this company was one of the best experiences I've had. Everything was well-organized, the guides were professional, and the destinations were simply breathtaking. Highly recommended!
-                  </p>
+      </div>
+      <div class="col-lg-7 ps-4">
+        <div class="row review-slider">
+          <div class="col-sm-4 item">
+            <div class="testimonial-item1 rounded">
+              <div class="author-info d-flex align-items-center mb-4">
+                <img src="images/testimonial/client1.png" alt="Jared Erondu" />
+                <div class="author-title ms-3">
+                  <h5 class="m-0 theme">Jared Erondu</h5>
+                  <span>Supervisor</span>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-4 item">
-              <div class="testimonial-item1 rounded">
-                <div class="author-info d-flex align-items-center mb-4">
-                  <img src="images/testimonial/client2.png" alt="" />
-                  <div class="author-title ms-3">
-                    <h5 class="m-0 theme">Jared Erondu</h5>
-                    <span>Supervisor</span>
-                  </div>
-                </div>
-                <div class="details">
-                  <p class="m-0">
-                    <i class="fa fa-quote-left me-2 fs-1"></i>From start to finish, the service was outstanding. Every destination exceeded my expectations, and the guides were knowledgeable and friendly. Truly a memorable journey!
-                  </p>
-                </div>
+              <div class="details">
+                <p class="m-0">
+                  <i class="fa fa-quote-left me-2 fs-1"></i>TripSyncGo made my trip stress-free. Everything from airport pickup to local tours was booked in advance. Totally reliable and worth it!
+                </p>
               </div>
             </div>
           </div>
+          <div class="col-sm-4 item">
+            <div class="testimonial-item1 rounded">
+              <div class="author-info d-flex align-items-center mb-4">
+                <img src="images/testimonial/client2.png" alt="Samantha Lee" />
+                <div class="author-title ms-3">
+                  <h5 class="m-0 theme">Samantha Lee</h5>
+                  <span>Marketing Executive</span>
+                </div>
+              </div>
+              <div class="details">
+                <p class="m-0">
+                  <i class="fa fa-quote-left me-2 fs-1"></i>I loved being able to compare ride offers before I landed. The guide I hired was amazing and gave me a truly local experience. Highly recommend TripSyncGo!
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- You can add more testimonial items here -->
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
   <!-- testimonial ends -->
 
   <!-- partner starts -->
@@ -857,15 +813,14 @@
           <div class="row justify-content-between">
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 pe-4">
               <div class="footer-about">
-                <img src="images/logo-white.png" alt="" style="height: 40px;"/>
+                <img src="images/logo-white.png" alt="" style="height: 40px;"/> 
                 <p class="mt-3 mb-3 white">
                   Discover unforgettable journeys and unique experiences. We’re here to guide you every step of the way.
                 </p>
                 <ul class="list-unstyle">
                   <li class="white"><strong>PO Box:</strong> +47-252-254-2542</li>
-                  <li class="white"><strong>Location:</strong> Collins Street, sydney, Australia</li>
-                  <li class="white"><strong>Email:</strong> info@Travelin.com</li>
-                  <li class="white"><strong>Website:</strong> www.Travelin.com</li>
+                  <li class="white"><strong>Location:</strong> Colombo,Sri Lanka</li>
+                  <li class="white"><strong>Email:</strong> sanjaya@tripsyncgo.com</li>
                 </ul>
               </div>
             </div>
@@ -875,8 +830,9 @@
                 <ul>
                   <li><a href="about.html">About Us</a></li>
                   <li><a href="contact.html">Contact Us</a></li>
-                  <li><a href="about-us.html">Privacy Policy</a></li>
-                  <li><a href="about-us.html">Terms &amp; Conditions</a></li>
+                  <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                  <li><a href="term-and-conditions.html">Terms &amp;
+                                            Conditions</a></li>
                   <li><a href="faq.html">Faq</a></li>
                 </ul>
               </div>
@@ -904,7 +860,7 @@
           <div
             class="copyright-inner rounded p-3 d-md-flex align-items-center justify-content-between">
             <div class="copyright-text">
-              <p class="m-0 white">2022 Travelin. All rights reserved.</p>
+              <p class="m-0 white">2022 TripSyncGo. All rights reserved.</p>
             </div>
             <div class="social-links">
               <ul>
