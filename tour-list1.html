@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
 
 <head>
@@ -37,7 +37,7 @@
                     <ul>
                         <li><a href="#" class="white"><i class="icon-calendar white"></i> Thursday, Mar 26, 2021</a></li>
                         <li><a href="#" class="white"><i class="icon-location-pin white"></i>  Hollywood, America</a></li>
-                        <li><a href="#" class="white"><i class="icon-clock white"></i> Mon-Fri: 10 AM – 5 PM</a></li>
+                        <li><a href="#" class="white"><i class="icon-clock white"></i> Mon-Fri: 10 AM â€“ 5 PM</a></li>
                     </ul>
                 </div>
                 <div class="links float-right">
@@ -228,8 +228,38 @@
     <!-- header ends -->
 
     <!-- BreadCrumb Starts -->  
-    <section class="breadcrumb-main pb-20 pt-14" style="background-image: url(images/bg/bg1.jpg);">
-        <div class="section-shape section-shape1 top-inherit bottom-0" style="background-image: url(images/shape8.png);"></div>
+    <section class="breadcrumb-main pb-20 pt-14" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        >
+        <div class="section-shape section-shape1 top-inherit bottom-0" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        ></div>
         <div class="breadcrumb-outer">
             <div class="container">
                 <div class="breadcrumb-content text-center">
@@ -275,7 +305,22 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-3">
                                    <div class="trend-item2 rounded">
-                                        <a href="tour-single.html" style="background-image: url(images/destination/destination17.jpg);"></a>
+                                        <a href="tour-single.html" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        ></a>
                                          <div class="color-overlay"></div>
                                     </div> 
                                 </div>
@@ -312,14 +357,29 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-3">
                                    <div class="trend-item2 rounded">
-                                        <a href="tour-single.html" style="background-image: url(images/destination/destination15.jpg);"></a>
+                                        <a href="tour-single.html" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        ></a>
                                          <div class="color-overlay"></div>
                                     </div> 
                                 </div>
                                 <div class="col-lg-5 col-md-6">
                                     <div class="trend-content position-relative text-md-start text-center">
                                         <small>6+ Hours | Full Day Tours</small>
-                                        <h3 class="mb-1"><a href="tour-single.html">Adriatic Adventure–Zagreb To Athens</a></h3>
+                                        <h3 class="mb-1"><a href="tour-single.html">Adriatic Adventureâ€“Zagreb To Athens</a></h3>
                                         <h6 class="theme mb-0"><i class="icon-location-pin"></i> Greece</h6>
                                         <p class="mt-4 mb-0">Taking Safety Measures <br><a href="#"><span class="theme"> Free cancellation</span></a></p>
                                     </div>
@@ -349,7 +409,22 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-3">
                                    <div class="trend-item2 rounded">
-                                        <a href="tour-single.html" style="background-image: url(images/destination/destination11.jpg);"></a>
+                                        <a href="tour-single.html" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        ></a>
                                          <div class="color-overlay"></div>
                                     </div> 
                                 </div>
@@ -386,14 +461,29 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-3">
                                    <div class="trend-item2 rounded">
-                                        <a href="tour-single.html" style="background-image: url(images/destination/destination12.jpg);"></a>
+                                        <a href="tour-single.html" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        ></a>
                                          <div class="color-overlay"></div>
                                     </div> 
                                 </div>
                                 <div class="col-lg-5 col-md-6">
                                     <div class="trend-content position-relative text-md-start text-center">
                                         <small>6+ Hours | Full Day Tours</small>
-                                        <h3 class="mb-1"><a href="tour-single.html">Adriatic Adventure–Zagreb To Athens</a></h3>
+                                        <h3 class="mb-1"><a href="tour-single.html">Adriatic Adventureâ€“Zagreb To Athens</a></h3>
                                         <h6 class="theme mb-0"><i class="icon-location-pin"></i> Greece</h6>
                                         <p class="mt-4 mb-0">Taking Safety Measures <br><a href="#"><span class="theme"> Free cancellation</span></a></p>
                                     </div>
@@ -423,7 +513,22 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-3">
                                    <div class="trend-item2 rounded">
-                                        <a href="tour-single.html" style="background-image: url(images/destination/destination13.jpg);"></a>
+                                        <a href="tour-single.html" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        ></a>
                                          <div class="color-overlay"></div>
                                     </div> 
                                 </div>
@@ -460,7 +565,22 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-3">
                                    <div class="trend-item2 rounded">
-                                        <a href="tour-single.html" style="background-image: url(images/destination/destination10.jpg);"></a>
+                                        <a href="tour-single.html" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        ></a>
                                          <div class="color-overlay"></div>
                                     </div> 
                                 </div>
@@ -497,7 +617,22 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-3">
                                    <div class="trend-item2 rounded">
-                                        <a href="tour-single.html" style="background-image: url(images/destination/destination14.jpg);"></a>
+                                        <a href="tour-single.html" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        ></a>
                                          <div class="color-overlay"></div>
                                     </div> 
                                 </div>
@@ -570,7 +705,22 @@
                                     <div data-min="0" data-max="2000" data-unit="$" data-min-name="min_price" data-max-name="max_price" class="range-slider-ui ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
                                         <span class="min-value">0 $</span> 
                                         <span class="max-value">20000 $</span>
-                                        <div class="ui-slider-range ui-widget-header ui-corner-all full" style="left: 0%; width: 100%;"></div>
+                                        <div class="ui-slider-range ui-widget-header ui-corner-all full" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        ></div>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -622,7 +772,22 @@
     <!-- top Destination ends -->
 
     <!-- Discount action starts -->
-    <section class="discount-action pt-0" style="background-image:url(images/section-bg1.png); background-position:center;">
+    <section class="discount-action pt-0" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        >
         <div class="container">
             <div class="call-banner rounded pt-10 pb-14">
                 <div class="call-banner-inner w-75 mx-auto text-center px-5">
@@ -646,7 +811,22 @@
         </div>    
         <div class="white-overlay"></div>
         <div class="white-overlay"></div>
-        <div class="section-shape  top-inherit bottom-0" style="background-image: url(images/shape6.png);"></div>
+        <div class="section-shape  top-inherit bottom-0" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        ></div>
     </section>
     <!-- Discount action Ends -->
 
@@ -695,8 +875,38 @@
     <!-- partner ends -->
 
     <!-- footer starts -->
-    <footer class="pt-20 pb-4"  style="background-image: url(images/background_pattern.png);">
-        <div class="section-shape top-0" style="background-image: url(images/shape8.png);"></div>
+    <footer class="pt-20 pb-4"  
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        >
+        <div class="section-shape top-0" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        ></div>
         <!-- Instagram starts -->
         <div class="insta-main pb-10">
             <div class="container">
@@ -882,7 +1092,7 @@
 
     <!-- search popup -->
     <div id="search1">
-        <button type="button" class="close">×</button>
+        <button type="button" class="close">Ã—</button>
         <form>
             <input type="search" value="" placeholder="type keyword(s) here" />
             <button type="submit" class="btn btn-primary">Search</button>
@@ -911,7 +1121,22 @@
                         <div class="row">
                             <div class="col-lg-6">
                                <div class="blog-image rounded">
-                                    <a href="#" style="background-image: url(images/trending/trending5.jpg);"></a>
+                                    <a href="#" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        ></a>
                                 </div> 
                             </div>
                             <div class="col-lg-6">
@@ -950,7 +1175,22 @@
                         <div class="row">
                             <div class="col-lg-6">
                                <div class="blog-image rounded">
-                                    <a href="#" style="background-image: url(images/trending/trending5.jpg);"></a>
+                                    <a href="#" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        ></a>
                                 </div> 
                             </div>
                             <div class="col-lg-6">
@@ -1009,3 +1249,5 @@
     <script src="js/custom-nav.js"></script>
 </body>
 </html>
+
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
 
 <head>
@@ -41,7 +41,7 @@
                         </li>
                         <li><a href="#" class="white"><i class="icon-location-pin white"></i> Hollywood, America</a>
                         </li>
-                        <li><a href="#" class="white"><i class="icon-clock white"></i> Mon-Fri: 10 AM – 5 PM</a></li>
+                        <li><a href="#" class="white"><i class="icon-clock white"></i> Mon-Fri: 10 AM â€“ 5 PM</a></li>
                     </ul>
                 </div>
                 <div class="links float-right">
@@ -239,7 +239,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="slide-inner">
-                            <div class="slide-image" style="background-image:url(images/cruise/slider1.jpg)"></div>
+                            <div class="slide-image" class="bg-cruise-slider1"></div>
                             <div class="swiper-content">
                                 <div class="entry-meta mb-2">
                                     <h5 class="entry-category mb-0 white">Amazing Places</h5>
@@ -253,7 +253,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="slide-inner">
-                            <div class="slide-image" style="background-image:url(images/cruise/slider2.jpg)"></div>
+                            <div class="slide-image" class="bg-cruise-slider2"></div>
                             <div class="swiper-content">
                                 <div class="entry-meta mb-2">
                                     <h5 class="entry-category mb-0 white">Explore Travel</h5>
@@ -270,7 +270,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="slide-inner">
-                           <div class="slide-image" style="background-image:url(images/cruise/slider3.jpg)"></div>
+                           <div class="slide-image" class="bg-cruise-slider3"></div>
                            <div class="swiper-content">
                                 <div class="entry-meta mb-2">
                                     <h5 class="entry-category mb-0 white">Road To Travel</h5>
@@ -363,7 +363,7 @@
     </div>
     
     <!-- Last Minute Deal Starts -->
-    <section class="trending pb-6 pt-6" style="background-image: url(images/shape2.png);">
+    <section class="trending pb-6 pt-6" class="bg-shape-2">
         <div class="container">
             <div class="section-title mb-6 w-75 mx-auto text-center">
                 <h4 class="mb-1 theme1">Featured Deals</h4>
@@ -594,7 +594,7 @@
     <!-- top Destination ends -->
 
     <!-- about-us starts -->
-    <section class="about-us pb-2 pt-0" style="background-image:url(images/shape4.png); background-position:center;">
+    <section class="about-us pb-2 pt-0" class="bg-shape-4">
         <div class="container">
             <div class="row align-items-center d-flex">
                 <div class="col-lg-6 mb-4">
@@ -773,7 +773,7 @@
     <!-- best tour Ends -->
 
     <!-- Discount action starts -->
-    <section class="discount-action" style="background-image:url(images/section-bg1.png); background-position:center; background-color: #f1f1f1;"> 
+    <section class="discount-action" class="bg-section-bg1-color"> 
         <div class="container">
             <div class="call-banner rounded pt-0 py-5 overflow-visible">
                 <div class="call-banner-inner w-75 px-5">
@@ -976,8 +976,38 @@
     <!-- recent-articles ends -->
 
     <!-- footer starts -->
-    <footer class="pt-20 pb-4" style="background-image: url(images/background_pattern.png);">
-        <div class="section-shape top-0" style="background-image: url(images/shape8.png);"></div>
+    <footer class="pt-20 pb-4" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        >
+        <div class="section-shape top-0" 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        ></div>
         <!-- Instagram starts -->
         <div class="insta-main pb-10">
             <div class="container">
@@ -1166,7 +1196,7 @@
 
     <!-- search popup -->
     <div id="search1">
-        <button type="button" class="close">×</button>
+        <button type="button" class="close">Ã—</button>
         <form>
             <input type="search" value="" placeholder="type keyword(s) here" />
             <button type="submit" class="btn btn-primary">Search</button>
@@ -1201,7 +1231,22 @@
                                     <div class="col-lg-6">
                                         <div class="blog-image rounded">
                                             <a href="#"
-                                                style="background-image: url(images/trending/trending5.jpg);"></a>
+                                                
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        ></a>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -1245,7 +1290,22 @@
                                     <div class="col-lg-6">
                                         <div class="blog-image rounded">
                                             <a href="#"
-                                                style="background-image: url(images/trending/trending5.jpg);"></a>
+                                                
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        ></a>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -1312,3 +1372,5 @@
 </body>
 
 </html>
+
+

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap");
+
 /*------------------------------------------------------------------
 * Project:        Travelin - Travel Tour Booking HTML Templates
 * Author:         bizberg_themes
@@ -1357,8 +1358,9 @@ input#submit:hover {
   border: none;
 }
 .accrodion-grp .accrodion .accrodion-title h5:before {
-  content: "\f107";
-  font-family: "FontAwesome";
+  content: "\e604";
+  font-family: "simple-line-icons";
+  font-weight: 400;
   color: #222222;
   font-size: 20px;
   position: absolute;
@@ -1387,7 +1389,9 @@ input#submit:hover {
   color: #fff;
 }
 .accrodion-grp .accrodion.active .accrodion-title h5:before {
-  content: "\f106";
+  content: "\e607";              /* Simple Line Icons up arrow */
+  font-family: "simple-line-icons";
+  font-weight: 400;
   color: #fff;
 }
 

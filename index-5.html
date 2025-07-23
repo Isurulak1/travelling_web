@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zxx">
   <head>
     <meta charset="UTF-8" />
@@ -21,7 +21,22 @@
     <link rel="stylesheet" href="fonts/line-icons.css" type="text/css" />
   </head>
 
-  <body style="background-image: url(images/bg/bg1.jpg)">
+  <body 
+            param($match)
+            $beforeMatch = $content.Substring(0, $match.Index)
+            $elementStart = $beforeMatch.LastIndexOf('<')
+            $elementContent = $content.Substring($elementStart, $match.Index + $match.Length - $elementStart)
+            
+            if ($elementContent -match 'class="([^"]*)".*?' + [regex]::Escape($replacement.Key)) {
+                # Element already has class attribute, merge
+                $existingClasses = $matches[1]
+                $newClass = $newValue -replace 'class="([^"]*)"', '$1'
+                return $elementContent -replace 'class="([^"]*)"', "class=`"$1 $newClass`"" -replace [regex]::Escape($replacement.Key), ""
+            } else {
+                # Element doesn't have class attribute, add new one
+                return $newValue
+            }
+        >
     <!-- search banner starts -->
     <section class="search-banner d-flex align-items-center pt-14 pb-10">
       <div class="container">
@@ -356,3 +371,6 @@
     <script src="js/main.js"></script>
   </body>
 </html>
+
+
+
